@@ -1,0 +1,484 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/klickrent.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1> Bootstrap </h1>
+        </section>
+        <section>
+          <section>
+            <h2> CSS </h2>
+          </section>
+          <section>
+            <h3> Mobile first</h3>
+            <p> Always start with the small screens. </p>
+          </section>
+          <section>
+            <h3>
+              Normalize.css
+            </h3>
+            <p>We can use plain HTML, with same appearence in all browsers</p>
+          </section>
+        </section>
+
+        <section>
+
+          <section>
+            <h2> Grid system </h2>
+          </section>
+
+          <section>
+            <h3>Sizes of grid system</h3>
+            <h4></h4>
+            <table>
+              <thead>
+                <th>Screen</th>
+                <th>Class</td>
+                <th>Size</td>
+                <th>Container</th>
+              </thead>
+              <tr>
+                <td>Extra small / Phones</td>
+                <td><code>-xs-</code></td>
+                <td><= 768px</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>Small / Tablets</td>
+                <td><code>-sm-</code></td>
+                <td> >= 768px</td>
+                <td>750px</td>
+              </tr>
+              <tr>
+                <td>Medium / Desktops</td>
+                <td><code>-md-</code></td>
+                <td> >= 992px </td>
+                <td>970px</td>
+              </tr>
+              <tr>
+                <td>Large / Desktops</td>
+                <td><code>-lg-</code></td>
+                <td> >= 1200px</td>
+                <td>1170px</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <h3>Container</h3>
+            <p>We use <b>only</b> the <code>container</code> class</p>
+            <p>The <code>.container</code> has a padding of <b>15px</b> on left and right sides</p>
+          </section>
+
+          <section>
+            <h4>Container margins</h4>
+            <img src="/images/image-1.png" alt="">
+          </section>
+
+          <section>
+            <h3>Rows</h3>
+            <p>Rows always shoulb be the first child of a <code>.container</code></p>
+            <p>The <code>.row</code> has a negative margin of <b>-15px</b> to work with the container</p>
+            <p>The with of a columns its valid not only on that scren, but that screen and above</p>
+          </section>
+
+          <section>
+            <h4>Row margins</h4>
+            <img src="/images/image-2.png" alt="">
+          </section>
+
+          <section>
+            <h3>Columns</h3>
+            <p>Columns always should be children of a <code>.row</code></p>
+            <p>Each column has a padding of <b>15px</b> on left ant right to space the columns content</p>
+          </section>
+
+          <section>
+            <h4>Columns margins</h4>
+            <img src="/images/image-3.png" alt="">
+          </section>
+
+          <section>
+            <h4>Columns nesting</h4>
+            <p>If you need split the column you can just add another column</p>
+            <pre><code data-trim data-noescape>
+.container
+  .row
+    .col-xs-12
+            </code></pre>
+            <p>Spliting:</p>
+            <pre><code data-trim data-noescape>
+.container
+  .row
+    .col-xs-6
+    .col-xs-6
+            </code></pre>
+            <p>Nesting:</p>
+            <pre><code data-trim data-noescape>
+.container
+  .row
+    .col-xs-12
+      .row
+        .col-xs-6
+        .col-xs-6
+            </code></pre>
+          </section>
+
+          <section>
+            <h4>Columns nesting</h4>
+            <img src="/images/image-5.png" alt="">
+          </section>
+
+          <section>
+            <h4>Offsets</h4>
+            <p>Use offset to push columns without create empty columns</p>
+            <img src="/images/image-7.png" alt="">
+          </section>
+
+          <section>
+            <h4>Push and Pull</h4>
+            <p>Use this classes to change the order of elements on screens based on screen sizes </p>
+            <p>We <b>always</b> use a column with a <code>.push</code> followed by a column with a <code>.pull</code> class.</p>
+          </section>
+
+          <section>
+            <h4>Commom mistakes</h4>
+            <p>Row without container</p>
+            <p>Nested columns without rows</p>
+            <p>Content without columns</p>
+          </section>
+
+          <section>
+            <h3>How to use</h3>
+            <p><b>Always</b> start writting with the classes for smaller screens</p>
+            <pre><code data-trim data-noescape>
+.col-xs-12
+.col-xs-12.col-md-6
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>How to use</h3>
+            <p><b>Always</b> start writting all the grid</p>
+            <pre><code data-trim data-noescape>
+.container
+  .row
+    .col-xs-12
+  .row
+    .col-xs-12.col-md-6
+            </code></pre>
+            <p>and after this you cn add the content (forms, text, etc)</p>
+          </section>
+
+          <section>
+            <h3>How to use</h3>
+            <p>if you need use offsets, push or pull, continue using the mobile first on the class order</p>
+            <p>Its simply easier to understant</p>
+            <pre><code data-trim data-noescape>
+.container
+  .row
+    .col-xs-12
+  .row
+    .col-xs-12.col-md-offset-3.col-md-6
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+
+          <section>
+            <h2> Typography </h2>
+          </section>
+
+          <section>
+            <h3> Common text </h3>
+            <p>Use the default <code>tags</code> to formt the text.</p>
+            <p><b>Avoid</b> create exceptions, like a <code>p</code> bold or change the space between lines</p>
+          </section>
+
+          <section>
+            <h3> Bootstrap components</h3>
+            <p>Bootstrap has some small components, like <code>page titles</code>, <code>addresses blocks</code>.</p>
+            <p>Try to use them, and if necessary, you can add a theme for klickrent.</p>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h2> Forms </h2>
+          </section>
+
+          <section>
+            <h3>Use the following pattern for fields</h3>
+            <pre><code data-trim data-noescape>
+.form-group
+  label TITLE
+  input.form-control(type="text" name="title" placeholder="TITLE")
+  .help-block.text-danger ERROR MESSAGES FOR TITLE
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Dont mix form and grid</h3>
+            <p>Write the grid...</p>
+            <pre><code data-trim data-noescape>
+.container
+  form
+    .row
+      .col-xs-12
+        // title
+    .row
+      .col-xs-12.col-md-6
+        // First name
+      .col-xs-12.col-md-6
+        // Last name
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Dont mix form and grid</h3>
+            <p>..and <b>after</b> the grid, write the fields</p>
+            <pre><code data-trim data-noescape>
+.container
+  form
+    .row
+      .col-xs-12
+        .form-group
+          label Title
+          input.form-control(type="text" name="title")
+          .help-block.text-danger ERROR MESSAGES FOR TITLE
+    .row
+      .col-xs-12.col-md-6
+        .form-group
+          label Title
+          input.form-control(type="text" name="title")
+          .help-block.text-danger ERROR MESSAGES FOR TITLE
+      .col-xs-12.col-md-6
+        .form-group
+          label Title
+          input.form-control(type="text" name="title")
+          .help-block.text-danger ERROR MESSAGES FOR TITLE
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Errors</h3>
+            <p>The errors should be visible after the field...</p>
+            <pre><code data-trim data-noescape>
+.container
+  form
+    .row
+      .col-xs-12
+        .form-group
+          label Title
+          input.form-control(type="text" name="title")
+          .help-block.text-danger ERROR MESSAGES FOR TITLE
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Errors</h3>
+            <p>... and a list of all errors in the top of the form, inside an <code>.alert</code></p>
+            <pre><code data-trim data-noescape>
+.container
+  form
+    .row
+    .col-xs-12
+      .alert.alert-dismissible.alert-danger
+        button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+          span(aria-hidden="true")&times
+        strong TITLE LIST ERROS
+        ol
+          li TEXT ITEM ERROR
+    .row
+      .col-xs-12
+        .form-group
+          label Title
+          input.form-control(type="text" name="title")
+            </code></pre>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2> Helper classes </h2>
+          </section>
+
+          <section>
+            <h3> Colors </h3>
+            <p>Bootstrap has classes to set texts colors, backgounds.</p>
+            <p><b>Avoid</b> write css just to add change colors, prefer use this classes</p>
+            <pre><code data-trim data-noescape>
+// text colors
+div.text-muted
+div.text-primary
+div.text-success
+div.text-info
+div.text-warning
+div.text-danger
+// backgrounds
+div.bg-primary
+div.bg-success
+div.bg-info
+div.bg-warning
+div.bg-danger
+            </code></pre>
+
+          </section>
+          <section>
+            <h3> Colors </h3>
+            <p>To override some color of other component, just add an extra element with the class</p>
+            <pre><code data-trim data-noescape>
+.alert.alert-danger
+  strong THIS IS RED BY DEFAULT
+
+// force color green
+.alert.alert-danger
+  strong
+    span.text-success THIS IS GREEN NOW
+            </code></pre>
+          </section>
+        </section>
+
+
+
+
+        <section>
+          <section>
+            <h2> Responsive utilities </h2>
+          </section>
+
+          <section>
+            <h3> When to use </h3>
+            <p>Sometimes we have differents components on  small and big screens, and this classes help to show/hide elements, like the "hamburger menu icon"</p>
+          </section>
+
+          <section>
+            <h3> When to use </h3>
+            <p>But this classes are usefull  too when conbined with another aproach, like, the same content but with different classes or behaviors.</p>
+            <p>For example, a tab navigation in big screens that should be a accordeon on small screens</p>
+          </section>
+        </section>
+
+
+
+        <section>
+          <section>
+            <h2> Consistency </h2>
+          </section>
+
+          <section>
+            <h3> Consistency of behavior </h3>
+            <p>Try to keep the same use and behavior of components across the screens.</p>
+            <h3>Why?</h3>
+            <p>Easier to the user, fewer components, less CSS, less JS.</p>
+          </section>
+
+          <section>
+            <h3> Consistency of behavior </h3>
+            <p>So, if we have a table with a list of users, and to edit the user we have to click a button, dont make a table where you have just to click on the line </p>
+          </section>
+
+          <section>
+            <h3> Consistency of behavior </h3>
+            <p>Or, if the edit on a page load another page with the form, avoid make exceprions, like open a modal or a section above the table.</p>
+          </section>
+
+          <section>
+            <h3> Consistency of Colors </h3>
+            <p>Pay attention to the color you're using. check the relation between colors, like main actions with primary color, danger color only for errors, etc</p>
+          </section>
+
+
+        </section>
+
+        <section>
+          <section>
+            <h2> Code style HTML</h2>
+          </section>
+
+          <section>
+            <h3> Writting </h3>
+            <p> Never write anything outside the grid. <b>never.</b> </p>
+            <p> <b>Try</b> to use the code grom bootstrap. <b>Copy&Paste</b>.</p>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2> Code style CSS</h2>
+          </section>
+
+          <section>
+            <h3> New selectors </h3>
+            <p><b>Never</b> write custom css with tag selectors.</p>
+            <pre><code data-trim data-noescape>
+h1 {
+  color: blue;
+}
+            </code></pre>
+            <p>But you can use tag selectors if they are nested</p>
+            <pre><code data-trim data-noescape>
+.my_element h1 {
+  color: blue;
+}
+            </code></pre>
+
+          </section>
+
+        </section>
+
+        <!-- <section>
+          <section>
+            <h2> Code style Javascript</h2>
+          </section>
+        </section> -->
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
